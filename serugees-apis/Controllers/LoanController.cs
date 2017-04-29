@@ -52,16 +52,20 @@ namespace Serugees.Apis.Controllers
                 return BadRequest();
             }
 
-            var loansRepo = _loanRepository.Find(id);
-            if (loansRepo == null)
+            var loan = _loanRepository.Find(id);
+            if (loan == null)
             {
                 return NotFound();
             }
 
-            loansRepo.IsActive = item.IsActive;
-            loansRepo.LoanId = item.LoanId;
+            loan.IsActive = item.IsActive;
+            loan.LoanId = item.LoanId;
+            loan.Amount = item.Amount;
+            loan.DateRequested = System.DateTime.Now.ToString();
+            loan.DurationInMonths = item.DurationInMonths;
 
-            _loanRepository.Update(loansRepo);
+
+            _loanRepository.Update(loan);
             return new NoContentResult();
         }
 
