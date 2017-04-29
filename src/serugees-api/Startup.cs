@@ -34,7 +34,7 @@ namespace serugees_api
                 builder.DataSource = "localhost";   // update me
                 builder.UserID = "sa";              // update me
                 builder.Password = "H%aD92nwqjj3";      // update me
-                builder.InitialCatalog = "Cars";
+                builder.InitialCatalog = "SerugeesDb";
             services.AddDbContext<LoanContext>(options => options.UseSqlServer(builder.ConnectionString));
             //services.AddDbContext<LoanContext>(opt => opt.UseInMemoryDatabase());
             services.AddMvc();

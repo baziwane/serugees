@@ -13,6 +13,6 @@ namespace serugees_api.Models
         {
         }
 
-        public DbSet<Loan> allLoans { get; set; }
+        public DbSet<Loan> Loans { get; set; }
     }
 }
