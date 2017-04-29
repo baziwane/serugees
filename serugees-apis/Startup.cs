@@ -38,8 +38,8 @@ namespace Serugees.Apis
             services.AddDbContext<SerugeesDbContext>(options => options.UseSqlServer(builder.ConnectionString));
             //services.AddDbContext<SerugeesDbContext>(opt => opt.UseInMemoryDatabase());
             services.AddMvc();
-            services.AddScoped<ILoanRegistry, LoanRegister>();
-            services.AddSingleton<ILoanRegistry, LoanRegister>();
+            services.AddScoped<ILoanRegistry, LoanRegistry>();
+            services.AddSingleton<ILoanRegistry, LoanRegistry>();
             // Add framework services.
             
         }
