@@ -67,8 +67,16 @@ namespace serugees_api.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(long id)
         {
+            var todo = _loanRepository.Find(id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            _loanRepository.Remove(id);
+            return new NoContentResult();
         }
     }
 }
