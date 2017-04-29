@@ -13,7 +13,7 @@ namespace serugees_api.Models
             _context = context;
 
             if( _context.allLoans.Count() == 0)
-                Add(new Loan { ProductName = "Loan1" });
+                Add(new Loan { Amount = 2500000,DurationInMonths=3, MembersId=2, IsActive=true  });
         }
 
         public IEnumerable<Loan> GetAll()

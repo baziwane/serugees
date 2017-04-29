@@ -30,13 +30,13 @@ namespace serugees_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            /* SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "localhost";   // update me
                 builder.UserID = "sa";              // update me
                 builder.Password = "H%aD92nwqjj3";      // update me
                 builder.InitialCatalog = "Cars";
-            services.AddDbContext<LoanContext>(options => options.UseSqlServer(builder.ConnectionString));*/
-            services.AddDbContext<LoanContext>(opt => opt.UseInMemoryDatabase());
+            services.AddDbContext<LoanContext>(options => options.UseSqlServer(builder.ConnectionString));
+            //services.AddDbContext<LoanContext>(opt => opt.UseInMemoryDatabase());
             services.AddMvc();
             services.AddScoped<ILoanRepository, LoanRepository>();
             //services.AddSingleton<ITodoRepository, TodoRepository>();

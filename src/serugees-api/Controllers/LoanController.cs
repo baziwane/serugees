@@ -59,7 +59,7 @@ namespace serugees_api.Controllers
             }
 
             loansRepo.IsActive = item.IsActive;
-            loansRepo.ProductName = item.ProductName;
+            loansRepo.Key = item.Key;
 
             _loanRepository.Update(loansRepo);
             return new NoContentResult();
