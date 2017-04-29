@@ -10,8 +10,8 @@ namespace Serugees.Apis.Controllers
     [Route("api/[controller]")]
     public class LoanController : Controller
     {
-        private readonly ILoanRegister _loanRepository;
-        public LoanController(ILoanRegister loanRepository)
+        private readonly ILoanRegistry _loanRepository;
+        public LoanController(ILoanRegistry loanRepository)
         {
             _loanRepository = loanRepository;
         }

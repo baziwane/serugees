@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Serugees.Apis.Models
 {
-    public class LoanRegister : ILoanRegister
+    public class LoanRegister : ILoanRegistry
     {
         private readonly SerugeesDbContext _context;
         public LoanRegister(SerugeesDbContext context)
