@@ -6,7 +6,7 @@ namespace serugees_api.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long LoansId { get; set; }
+        public long LoanId { get; set; }
         public int Amount { get; set; }
         public int DurationInMonths { get; set; }
         public string DateRequested { get; set; }

@@ -1,3 +1,10 @@
--- Select rows from a Table or View 'Loans' in schema 'dbo'
-SELECT * FROM dbo.Loans
-GO
+
+
+/*ALTER TABLE dbo.Payments DROP CONSTRAINT FK__Payments__LoansI__3F466844;
+ALTER TABLE dbo.Payments DROP COLUMN LoansId;*/
+ALTER TABLE dbo.Loans DROP CONSTRAINT PK__Loans__CF866FDFAB0E7E70;
+ALTER TABLE dbo.Loans DROP COLUMN LoansId;
+
+ALTER TABLE dbo.Loans ADD LoanId int IDENTITY(1, 1) NOT NULL;
+ALTER TABLE dbo.Loans ADD CONSTRAINT PK_Loans PRIMARY KEY CLUSTERED (LoanId);
+ALTER TABLE dbo.Payments ADD LoanId INT FOREIGN KEY REFERENCES Loans (LoanId);
