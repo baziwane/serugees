@@ -40,14 +40,14 @@ namespace serugees_api.Controllers
                 return BadRequest();
             }
             _loanRepository.Add(item);
-            return CreatedAtRoute("GetLoan", new { id = item.Key }, item);
+            return CreatedAtRoute("GetLoan", new { id = item.LoansId }, item);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody]Loan item)
         {
-            if (item == null || item.Key != id)
+            if (item == null || item.LoansId != id)
             {
                 return BadRequest();
             }
@@ -59,7 +59,7 @@ namespace serugees_api.Controllers
             }
 
             loansRepo.IsActive = item.IsActive;
-            loansRepo.Key = item.Key;
+            loansRepo.LoansId = item.LoansId;
 
             _loanRepository.Update(loansRepo);
             return new NoContentResult();
