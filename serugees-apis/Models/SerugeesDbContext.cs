@@ -12,7 +12,7 @@ namespace Serugees.Apis.Models
             : base(options)
         {
         }
-
         public DbSet<Loan> Loans { get; set; }
+        public DbSet<Member> Members { get; set; }
     }
 }
