@@ -27,12 +27,12 @@ namespace serugees_api.Models
             _context.SaveChanges();
         }
 
-        public Loan Find(long key)
+        public Loan Find(int key)
         {
             return _context.Loans.FirstOrDefault(t => t.LoanId == key);
         }
 
-        public void Remove(long key)
+        public void Remove(int key)
         {
             var entity = _context.Loans.First(t => t.LoanId == key);
             _context.Loans.Remove(entity);

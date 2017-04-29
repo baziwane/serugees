@@ -22,7 +22,7 @@ namespace serugees_api.Controllers
         }
 
         [HttpGet("{id}", Name = "GetLoan")]
-        public IActionResult GetById(long id)
+        public IActionResult GetById(int id)
         {
             var item = _loanRepository.Find(id);
             if (item == null)
@@ -67,7 +67,7 @@ namespace serugees_api.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(long id)
+        public IActionResult Delete(int id)
         {
             var todo = _loanRepository.Find(id);
             if (todo == null)
