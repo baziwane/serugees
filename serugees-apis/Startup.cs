@@ -40,6 +40,8 @@ namespace Serugees.Apis
             services.AddMvc();
             services.AddScoped<ILoanRegistry, LoanRegistry>();
             services.AddSingleton<ILoanRegistry, LoanRegistry>();
+            services.AddScoped<IMemberRegistry, MemberRegistry>();
+            services.AddSingleton<IMemberRegistry, MemberRegistry>();
             // Add framework services.
             
         }

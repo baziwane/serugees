@@ -10,6 +10,6 @@ namespace Serugees.Apis.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserName { get; set; }
-        public string JoinDate{get;set;}
+        public System.DateTime JoinDate{get;set;}
     }
 }
