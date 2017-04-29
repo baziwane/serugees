@@ -36,10 +36,10 @@ namespace Serugees.Apis
                 builder.Password = "H%aD92nwqjj3";      // update me
                 builder.InitialCatalog = "SerugeesDb";
             services.AddDbContext<SerugeesDbContext>(options => options.UseSqlServer(builder.ConnectionString));
-            //services.AddDbContext<LoanContext>(opt => opt.UseInMemoryDatabase());
+            //services.AddDbContext<SerugeesDbContext>(opt => opt.UseInMemoryDatabase());
             services.AddMvc();
             services.AddScoped<ILoanRegister, LoanRegister>();
-            //services.AddSingleton<ITodoRepository, TodoRepository>();
+            services.AddSingleton<ILoanRegister, LoanRegister>();
             // Add framework services.
             
         }

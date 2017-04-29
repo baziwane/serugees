@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Serugees.Apis.Models
 {
-    public interface IMember
+    public interface IMemberRegistry
     {
         void Subscribe(Member member);
         IEnumerable<Member> GetAll();
