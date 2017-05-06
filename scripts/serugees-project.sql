@@ -19,7 +19,7 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE dbo.Members
 (
-    MembersId INT NOT NULL PRIMARY KEY, -- primary key column
+    MemberId INT NOT NULL PRIMARY KEY, -- primary key column
     FirstName [NVARCHAR](50) NOT NULL,
     LastName [NVARCHAR](50) NOT NULL,
     PhoneNumber [NVARCHAR](50) NOT NULL,
@@ -36,11 +36,11 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE dbo.Loans
 (
-    LoansId INT NOT NULL PRIMARY KEY, -- primary key column
+    LoanId INT NOT NULL PRIMARY KEY, -- primary key column
     Amount INT NOT NULL,
     DurationInMonths INT NOT NULL,
     DateRequested DATETIME DEFAULT GETDATE(),
-    MembersId INT FOREIGN KEY REFERENCES Members (MembersId)       
+    MemberId INT FOREIGN KEY REFERENCES Members (MemberId)       
 );
 GO
 
@@ -52,16 +52,16 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE dbo.Payments
 (
-    PaymentsId INT NOT NULL PRIMARY KEY, -- primary key column
+    PaymentId INT NOT NULL PRIMARY KEY, -- primary key column
     LoanPrincipal INT NOT NULL,
     AmountPaid INT NOT NULL,
     DepositDate DATETIME DEFAULT GETDATE(),
     NextInstallmentDueDate DATETIME DEFAULT (GETDATE()+30),
     MinimumPaymentDue INT NOT NULL,
-    LoansId INT FOREIGN KEY REFERENCES Loans (LoansId),
+    LoanId INT FOREIGN KEY REFERENCES Loans (LoanId),
 );
 GO
-
+/*
 ALTER TABLE dbo.Loans DROP CONSTRAINT FK__Loans__MembersId__3A81B327;
 ALTER TABLE dbo.Loans DROP COLUMN MembersId;
 
@@ -71,7 +71,7 @@ ALTER TABLE dbo.Members DROP COLUMN MembersId;
 ALTER TABLE dbo.Members ADD MembersId int IDENTITY(1, 1) NOT NULL;
 ALTER TABLE dbo.Members ADD CONSTRAINT PK_Members PRIMARY KEY CLUSTERED (MembersId);
 ALTER TABLE dbo.Loans ADD MembersId INT FOREIGN KEY REFERENCES Members (MembersId)
-GO
+GO*/
 
 -- Insert rows into table 'Members'
 INSERT INTO Members

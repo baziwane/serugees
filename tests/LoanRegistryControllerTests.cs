@@ -1,6 +1,7 @@
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
 using Serugees.Apis.Controllers;
+using System;
 using Serugees.Apis.Models;
 
 namespace Serugees.Apis.UnitTests
@@ -13,8 +14,8 @@ namespace Serugees.Apis.UnitTests
 
         public LoanRegistryControllerTests()
         {
-            _stubs = new LoanRegistryStubs();
-            _controller = new LoanController(_stubs);
+           // _stubs = new LoanRegistry();
+           // _controller = new LoanController(_stubs);
         }
 
         [Fact]
@@ -27,21 +28,21 @@ namespace Serugees.Apis.UnitTests
         }        
         public void loanAmountShouldNotEqualToZero()
         {
-
+            throw new NotImplementedException();
         }
 
         public void shouldValidateThatMemberExists()
         {
-
+            throw new NotImplementedException();
         }
 
         public void shouldUpdateExistingLoanWhenCalled()
         {
-
+            throw new NotImplementedException();
         }
         public void shouldDeleteAnExistingLoanWhenCalled()
         {
-
+            throw new NotImplementedException();
         }
 
     }
