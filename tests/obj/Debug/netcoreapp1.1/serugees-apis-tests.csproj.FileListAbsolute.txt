@@ -1,0 +1,13 @@
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/xunit.runner.utility.netstandard15.dll
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/xunit.runner.reporters.netstandard15.dll
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/serugees-apis-tests.deps.json
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/serugees-apis-tests.runtimeconfig.json
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/serugees-apis-tests.runtimeconfig.dev.json
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/serugees-apis-tests.dll
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/serugees-apis-tests.pdb
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/serugees-api.dll
+/Users/rbmatovu/Experiments/serugees-project/tests/bin/Debug/netcoreapp1.1/serugees-api.pdb
+/Users/rbmatovu/Experiments/serugees-project/tests/obj/Debug/netcoreapp1.1/serugees-apis-tests.AssemblyInfo.cs
+/Users/rbmatovu/Experiments/serugees-project/tests/obj/Debug/netcoreapp1.1/serugees-apis-tests.dll
+/Users/rbmatovu/Experiments/serugees-project/tests/obj/Debug/netcoreapp1.1/serugees-apis-tests.pdb
