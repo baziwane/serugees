@@ -8,10 +8,10 @@ using Serugees.Apis.Models;
 namespace Serugees.Apis.Controllers
 {
     [Route("api/[controller]")]
-    public class LoanController : Controller
+    public class LoansController : Controller
     {
         private readonly ILoanRegistry _loanRepository;
-        public LoanController(ILoanRegistry loanRepository)
+        public LoansController(ILoanRegistry loanRepository)
         {
             _loanRepository = loanRepository;
         }
@@ -22,7 +22,7 @@ namespace Serugees.Apis.Controllers
         }
 
         [HttpGet("{id}", Name = "GetLoan")]
-        public IActionResult GetById(int id)
+        public IActionResult Get(int id)
         {
             var item = _loanRepository.Find(id);
             if (item == null)
@@ -61,7 +61,7 @@ namespace Serugees.Apis.Controllers
             loan.IsActive = item.IsActive;
             loan.LoanId = item.LoanId;
             loan.Amount = item.Amount;
-            loan.DateRequested = System.DateTime.Now.ToString();
+            loan.DateRequested = System.DateTime.Now;
             loan.DurationInMonths = item.DurationInMonths;
 
 

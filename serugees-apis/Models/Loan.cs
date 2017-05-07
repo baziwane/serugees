@@ -9,8 +9,8 @@ namespace Serugees.Apis.Models
         public int LoanId { get; set; }
         public int Amount { get; set; }
         public int DurationInMonths { get; set; }
-        public string DateRequested { get; set; }
-        public int MembersId{get;set;}
+        public System.DateTime DateRequested { get; set; }
+        public int MemberId{get;set;}
         public bool IsActive { get; set; }
     }
 }

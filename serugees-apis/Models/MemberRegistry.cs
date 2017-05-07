@@ -24,11 +24,11 @@ namespace Serugees.Apis.Models
         }
         public Member SearchByMemberId(int memberId)
         {
-            return _context.Members.FirstOrDefault(m => m.MembersId == memberId);
+            return _context.Members.FirstOrDefault(m => m.MemberId == memberId);
         }
         public void Unsubscribe(int memberId)
         {
-            var entity = _context.Members.First(m => m.MembersId == memberId);
+            var entity = _context.Members.First(m => m.MemberId == memberId);
             _context.Members.Remove(entity);
             _context.SaveChanges();
         }

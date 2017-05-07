@@ -8,23 +8,23 @@ using Serugees.Apis.Models;
 namespace Serugees.Apis.Controllers
 {
     [Route("api/[controller]")]
-    public class MemberController : Controller
+    public class MembersController : Controller
     {
         private readonly IMemberRegistry _memberRegister;
-        public MemberController(IMemberRegistry members)
+        public MembersController(IMemberRegistry members)
         {
             _memberRegister = members;
         }
         [HttpGet]
-        public IEnumerable<Member> GetAllMembers()
+        public IEnumerable<Member> GetAll()
         {
             return _memberRegister.GetAllMembers();
         }
 
-        [HttpGet("{id}", Name = "Search")]
-        public IActionResult SearchById(int memberId)
+        [HttpGet("{id}", Name = "Retrieve")]
+        public IActionResult Get(int id)
         {
-            var item = _memberRegister.SearchByMemberId(memberId);
+            var item = _memberRegister.SearchByMemberId(id);
             if (item == null)
             {
                 return NotFound();
@@ -40,14 +40,14 @@ namespace Serugees.Apis.Controllers
                 return BadRequest();
             }
             _memberRegister.Add(member);
-            return CreatedAtRoute("Search", new { id = member.MembersId }, member);
+            return CreatedAtRoute("Search", new { id = member.MemberId }, member);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody]Member member)
         {
-            if (member == null || member.MembersId != id)
+            if (member == null || member.MemberId != id)
             {
                 return BadRequest();
             }
@@ -61,8 +61,9 @@ namespace Serugees.Apis.Controllers
             searchResult.FirstName = member.FirstName;
             searchResult.LastName = member.LastName;
             searchResult.JoinDate = member.JoinDate;
-            searchResult.UserName = member.UserName;
-            searchResult.MembersId = member.MembersId;
+            searchResult.LoginName = member.LoginName;
+            searchResult.IsActive = member.IsActive;
+            searchResult.MemberId = member.MemberId;
 
             _memberRegister.UpdateMember(searchResult);
             return new NoContentResult();
