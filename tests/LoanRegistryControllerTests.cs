@@ -9,7 +9,7 @@ namespace Serugees.Apis.UnitTests
     public class LoanRegistryControllerTests
     {
         //arrange
-        private readonly LoanController _controller;
+        private readonly LoansController _controller;
         private ILoanRegistry _stubs;
 
         public LoanRegistryControllerTests()

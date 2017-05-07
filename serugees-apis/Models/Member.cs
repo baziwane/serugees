@@ -6,10 +6,11 @@ namespace Serugees.Apis.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MembersId { get; set; }
+        public int MemberId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string UserName { get; set; }
+        public string LoginName { get; set; }
+        public bool IsActive {get; set;}
         public System.DateTime JoinDate{get;set;}
     }
 }
