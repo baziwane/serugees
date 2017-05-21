@@ -1,0 +1,109 @@
+version: '3'
+
+services:
+    serugees-web:
+        build:
+            context: ./serugees-web
+            dockerfile: Dockerfile
+        expose:
+            - "5000"
+        container_name: serugees-web-app
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_server.urls=http://0.0.0.0:5000
+        #env_file:
+            #- app-settings.env
+        # links:
+            # - dbpostgres-db
+            #  - serugees-apis
+        depends_on:
+              - serugees-apis
+            # - dbpostgres-db
+            # - serugees-db
+        networks:
+            - serugees-network
+    serugees-apis:
+        build:
+            context: ./serugees-apis
+            dockerfile: Dockerfile
+        expose:
+            - "5001"
+        container_name: serugees-apis-app
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_server.urls=http://0.0.0.0:5001
+        #env_file:
+            #- app-settings.env
+        links:
+            - dbpostgres-db
+        depends_on:
+            - dbpostgres-db
+            # - serugees-db
+        networks:
+            - serugees-network
+    proxy:
+        container_name: serugees-proxy
+        build:
+            context:  ./serugees-proxy
+            dockerfile: Dockerfile
+        ports:
+            - "80:80"
+        links:
+            - serugees-web
+            - serugees-apis
+        networks:
+            - serugees-network
+
+    dbpostgres-db:
+        image: postgres
+        container_name: serugees-postgres-db
+        volumes:
+            - /Users/rbmatovu/postgresql/data:/var/lib/postgresql
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: pgdbuser
+            POSTGRES_PASSWORD: Lz3hxHhqFmM3872Q
+            POSTGRES_DB: serugeesdb
+        networks:
+            - serugees-network
+
+
+    # serugees-db:
+    #     image: microsoft/mssql-server-linux
+    #     hostname: 'sqlserver'
+    #     # build:
+    #     #     context: ./mssql-db
+    #     #     dockerfile: Dockerfile
+    #     container_name: serugees-mssql-container
+    #     volumes:
+    #         - sqlserver-data: /Users/kennethb/mssql/data:/var/opt/mssql/data
+    #         # - sqlserver-data: :/var/opt/mssql/data
+    #     env_file:
+    #         - database.env
+    #     ports:
+    #         - "1433:1433"
+    #     volumes:
+    #         - sqlserver-data:/var/opt/mssql
+
+networks:
+  serugees-network:
+    driver: bridge
+
+
+# volumes:
+#     sqlserver-data:
+#         driver: local
+
+
+
+
+
+# https://www.sep.com/sep-blog/2017/02/27/nginx-reverse-proxy-to-asp-net-core-separate-docker-containers/
+# http://www.colinsalmcorner.com/post/load-balancing-dotnet-core-docker-containers-with-nginx
+# http://stackoverflow.com/questions/42107364/how-to-use-volume-in-docker-compose-for-postgres
+
+
+# docker-compose build
+# docker-compose --verbose up -d
+# docker-compose up -d --remove-orphans

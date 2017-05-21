@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Serugees.Apis.Models;
 
 namespace Serugees.Apis.Controllers
@@ -11,9 +12,11 @@ namespace Serugees.Apis.Controllers
     public class MembersController : Controller
     {
         private readonly IMemberRegistry _memberRegister;
-        public MembersController(IMemberRegistry members)
+        private readonly ILogger _logger;
+        public MembersController(IMemberRegistry members, ILogger<LoansController> logger)
         {
             _memberRegister = members;
+            _logger = logger;
         }
         [HttpGet]
         public IEnumerable<Member> GetAll()
@@ -22,14 +25,15 @@ namespace Serugees.Apis.Controllers
         }
 
         [HttpGet("{id}", Name = "Retrieve")]
-        public IActionResult Get(int id)
+        public IActionResult GetById(int id)
         {
             var item = _memberRegister.SearchByMemberId(id);
             if (item == null)
             {
                 return NotFound();
             }
-            return new ObjectResult(item);
+            //return new ObjectResult(item);
+            return this.Ok(item);
         }
         
         [HttpPost]
@@ -40,7 +44,7 @@ namespace Serugees.Apis.Controllers
                 return BadRequest();
             }
             _memberRegister.Add(member);
-            return CreatedAtRoute("Search", new { id = member.MemberId }, member);
+            return CreatedAtRoute("Retrieve", new { id = member.MemberId }, member);
         }
 
         // PUT api/values/5

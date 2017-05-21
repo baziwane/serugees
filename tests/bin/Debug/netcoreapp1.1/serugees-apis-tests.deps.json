@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "e9152ba408d9a0e9dcd008d5d74ab69fa7cc7fe4"
+    "signature": "9f17a85bfc7f78e5eeddf5fd50b0ed492bb3d325"
   },
   "compilationOptions": {},
   "targets": {
@@ -1013,6 +1013,47 @@
           }
         }
       },
+      "serilog/2.4.0": {
+        "dependencies": {
+          "System.Collections.NonGeneric": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "serilog.extensions.logging/1.4.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.1",
+          "Serilog": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Extensions.Logging.dll": {}
+        }
+      },
+      "serilog.sinks.file/3.2.0": {
+        "dependencies": {
+          "Serilog": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        }
+      },
+      "serilog.sinks.literate/2.1.0": {
+        "dependencies": {
+          "Serilog": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.Literate.dll": {}
+        }
+      },
+      "serilog.sinks.rollingfile/3.3.0": {
+        "dependencies": {
+          "Serilog.Sinks.File": "3.2.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
+        }
+      },
       "sqlite/3.13.0": {
         "runtimeTargets": {
           "runtimes/linux-x64/native/libsqlite3.so": {
@@ -1225,7 +1266,11 @@
           "Microsoft.EntityFrameworkCore.InMemory": "1.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.0.2",
-          "Microsoft.Extensions.Logging.Debug": "1.0.1"
+          "Microsoft.Extensions.Logging.Debug": "1.0.1",
+          "Serilog": "2.4.0",
+          "Serilog.Extensions.Logging": "1.4.0",
+          "Serilog.Sinks.Literate": "2.1.0",
+          "Serilog.Sinks.RollingFile": "3.3.0"
         },
         "runtime": {
           "serugees-api.dll": {}
@@ -1840,6 +1885,41 @@
       "sha512": "sha512-ykiYCf/0hIc0xm+g6bVX8nw9St5Ool+r4US+B+56Lv/GFnDG5G9BK4n7WkrwEpuWV3XjMn38oHgHOnNMzBVNKA==",
       "path": "runtime.win7-x86.runtime.native.system.data.sqlclient.sni/4.0.1",
       "hashPath": "runtime.win7-x86.runtime.native.system.data.sqlclient.sni.4.0.1.nupkg.sha512"
+    },
+    "serilog/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bzfqn8iwozwOrlBMO88u0TPy0oXZb9v79rRM9cL6N/cIBUUqEKm3HNncTxIKzspYz2dEzQDHKc3ONaZJ05Cbng==",
+      "path": "serilog/2.4.0",
+      "hashPath": "serilog.2.4.0.nupkg.sha512"
+    },
+    "serilog.extensions.logging/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nsg2CFYIQsZcNXYajDBNL+Li0EnFibOSLaACcpy+XGyrbmIEhGdLYiMXxadUE10kFfLLLbruZtdbGJ7OOudXlA==",
+      "path": "serilog.extensions.logging/1.4.0",
+      "hashPath": "serilog.extensions.logging.1.4.0.nupkg.sha512"
+    },
+    "serilog.sinks.file/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VHbo68pMg5hwSWrzLEdZv5b/rYmIgHIRhd4d5rl8GnC5/a8Fr+RShT5kWyeJOXax1el6mNJ+dmHDOVgnNUQxaw==",
+      "path": "serilog.sinks.file/3.2.0",
+      "hashPath": "serilog.sinks.file.3.2.0.nupkg.sha512"
+    },
+    "serilog.sinks.literate/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y9PhVZZgleKR4eOTqTFrBaqAsrKSPTrdwaFW0FhJZdLYhbSyRBThGQra0GPYlp82oM4Z2ux4LOyF/sm2kQTSKw==",
+      "path": "serilog.sinks.literate/2.1.0",
+      "hashPath": "serilog.sinks.literate.2.1.0.nupkg.sha512"
+    },
+    "serilog.sinks.rollingfile/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2lT5X1r3GH4P0bRWJfhA7etGl8Q2Ipw9AACvtAHWRUSpYZ42NGVyHoVs2ALBZ/cAkkS+tA4jl80Zie144eLQPg==",
+      "path": "serilog.sinks.rollingfile/3.3.0",
+      "hashPath": "serilog.sinks.rollingfile.3.3.0.nupkg.sha512"
     },
     "sqlite/3.13.0": {
       "type": "package",

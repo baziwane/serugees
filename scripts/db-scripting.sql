@@ -1,1 +1,1 @@
-SELECT * from Loans
+select * from dbo.Members
