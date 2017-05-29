@@ -1,6 +1,6 @@
 FROM microsoft/dotnet:1.1-sdk
 
-WORKDIR /serugees-apis
+WORKDIR /serugees-api
 
 MAINTAINER Ken, Raymo, Davi
 

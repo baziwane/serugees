@@ -45,7 +45,7 @@ namespace Serugees.Apis
                 builder.InitialCatalog = "SerugeesDb";
             services.AddDbContext<SerugeesDbContext>(options => options.UseSqlServer(builder.ConnectionString));*/
             //services.AddDbContext<SerugeesDbContext>(opt => opt.UseInMemoryDatabase());
-            var connectionString = Configuration.GetValue<string>("PostgresDb:ConnectionString") ?? Configuration.GetConnectionString("DefaultConnection");
+            var connectionString = Configuration.GetValue<string>("PostgresDb:ConnectionString") ?? Configuration.GetConnectionString("DefaultConnection_docker");
             services.AddDbContext<SerugeesDbContext>(options =>
                 options.UseNpgsql(connectionString));
             services.AddMvc();

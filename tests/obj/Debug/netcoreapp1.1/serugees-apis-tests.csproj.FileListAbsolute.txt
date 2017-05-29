@@ -11,3 +11,5 @@
 /Users/rbmatovu/Experiments/serugees-project/tests/obj/Debug/netcoreapp1.1/serugees-apis-tests.AssemblyInfo.cs
 /Users/rbmatovu/Experiments/serugees-project/tests/obj/Debug/netcoreapp1.1/serugees-apis-tests.dll
 /Users/rbmatovu/Experiments/serugees-project/tests/obj/Debug/netcoreapp1.1/serugees-apis-tests.pdb
+/Users/rbmatovu/Experiments/serugees-project/tests/obj/Debug/netcoreapp1.1/serugees-apis-tests.csprojResolveAssemblyReference.cache
+/Users/rbmatovu/Experiments/serugees-project/tests/obj/Debug/netcoreapp1.1/serugees-apis-tests.csproj.CoreCompileInputs.cache

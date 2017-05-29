@@ -11,6 +11,6 @@ namespace Serugees.Apis.Models
         public int DurationInMonths { get; set; }
         public System.DateTime DateRequested { get; set; }
         public int MemberId{get;set;}
-        public bool IsActive { get; set; }
+        public char IsActive { get; set; }
     }
 }

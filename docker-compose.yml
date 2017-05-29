@@ -7,15 +7,15 @@ services:
             dockerfile: Dockerfile
         expose:
             - "5000"
-        container_name: serugees-web-app
+        container_name: serugees-web
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_server.urls=http://0.0.0.0:5000
         #env_file:
             #- app-settings.env
-        # links:
+        links:
             # - dbpostgres-db
-            #  - serugees-apis
+              - serugees-apis
         depends_on:
               - serugees-apis
             # - dbpostgres-db
@@ -24,11 +24,11 @@ services:
             - serugees-network
     serugees-apis:
         build:
-            context: ./serugees-apis
+            context: ./serugees-api
             dockerfile: Dockerfile
         expose:
             - "5001"
-        container_name: serugees-apis-app
+        container_name: serugees-api
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_server.urls=http://0.0.0.0:5001
@@ -48,6 +48,7 @@ services:
             dockerfile: Dockerfile
         ports:
             - "80:80"
+            - "8090:8090"
         links:
             - serugees-web
             - serugees-apis
